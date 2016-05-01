@@ -1,5 +1,9 @@
 # DSP
 this is a course in my university
+
+
+
+
 import numpy as np
 f=open('coindesk-bpi-USD-close.csv')
 s=f.read()
