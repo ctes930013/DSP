@@ -1,79 +1,15 @@
-# -*- coding: utf-8 -*-
-"""
-Spyder Editor
+import numpy as np
 
-This is a temporary script file.
-"""
-MyTriangleSignal
+f=open('coindesk-bpi-USD-close.csv')
 
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Mar 22 13:45:20 2016
+s=f.read()
 
-@author: csie3
-"""
+sL=s.split('\n')
 
-from thinkdsp import *
+xL=[x.split(',')[-1]for x in sL]
 
+yL=[float(x)for x in xL[1:-4]]
 
-class RyTriangleSignal01(Sinusoid):
-    """Represents a triangle signal."""
-    
-    def evaluate(self, ts):
-        """Evaluates the signal at the given times.
+priceData=np.array(yL)
 
-         ts: float array of times
-        
-        returns: float wave array
-        """
-        
-        ts = np.asarray(ts)
-
-        T= 1/self.freq
-        
-        y0= T/2
-        
-        ys = abs((ts % T) - y0) / y0
-                 
-
-        return ys        
-
-
-
-
-class MyTriangleSignal(Sinusoid):
-    """Represents a triangle signal."""
-    
-    def evaluate(self, ts):
-        """Evaluates the signal at the given times.
-
-        ts: float array of times
-        
-        returns: float wave array
-        """      
-        '''
-        ts = np.asarray(ts)
-        cycles = self.freq * ts + self.offset / PI2
-        frac, _ = np.modf(cycles)
-        ys = np.abs(frac - 0.5)
-        ys = normalize(unbias(ys), self.amp)
-        return ys
-        '''
-        #T= 1/200
-        T= 1/self.freq
-        xL= []       
-        for t in ts:           
-            t= t % T  # also good for real number
-            #
-            #  0<= t <= T/2
-            #
-            if t>=0 and t< T/2: 
-                x= -4/T * t + 1            
-            #
-            #  T/2 <= t <= T
-            #
-            elif t>=T/2 and t<T:  
-                x= +4/T * t - 3            
-            xL = xL + [x]
-        ys= np.asarray(xL)        
-        return ys
+len(priceData)
