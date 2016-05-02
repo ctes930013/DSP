@@ -104,3 +104,29 @@ wNoise.make_wave(2112).play()
  <<請打開 signal06.png
  
  wNoise.make_wave(2112).plot()
+ 
+ 7.
+ 
+wave=pNoise.make_wave(2112)
+  
+pSpec=wave.make_spectrum()
+
+pSpec.plot_power()
+
+<<請打開 signal07.png
+
+wave=rNoise.make_wave(2112)
+
+rSpec=wave.make_spectrum()
+
+rSpec.plot_power()
+
+<<請打開 signal08.png
+
+wave=wNoise.make_wave(2112)
+
+wSpec=wave.make_spectrum()
+
+wSpec.plot_power()
+
+<<請打開 signal09.png
