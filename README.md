@@ -64,3 +64,24 @@ print(ma100[1000:1005])
 print(ma1000[1000:1005])
 
 <<[  9.9662261  10.0561453  10.1384566  10.2067331  10.2997526]
+
+4.
+
+
+
+5.
+
+from thinkdsp import*
+
+pNoise=PinkNoise()
+
+pNoise.make_wave(2112).play()
+
+rNoise=BrownianNoise()
+
+rNoise.make_wave(2112).play()
+
+wNoise=UncorrelatedUniformNoise()
+
+wNoise.make_wave(2112).play()
+
