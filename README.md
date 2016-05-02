@@ -35,17 +35,25 @@ def movingAverage(x,length):
 
 pl.plot(priceData)
 
+<<請打開 signal01.png
+
 ma100=movingAverage(priceData,100)
 
 pl.plot(ma100)
+
+<<請打開 signal02.png
 
 ma500=movingAverage(priceData,500)
 
 pl.plot(ma500)
 
+<<請打開 signal03.png
+
 ma1000=movingAverage(priceData,1000)
 
 pl.plot(ma1000)
+
+<<請打開 signal04.png
 
 3.
 
@@ -85,3 +93,14 @@ wNoise=UncorrelatedUniformNoise()
 
 wNoise.make_wave(2112).play()
 
+6.
+
+ pNoise.make_wave(2112).plot()
+ 
+ <<請打開 signal05.png
+ 
+ rNoise.make_wave(2112).plot()
+ 
+ <<請打開 signal06.png
+ 
+ wNoise.make_wave(2112).plot()
